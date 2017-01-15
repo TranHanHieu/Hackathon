@@ -18,6 +18,7 @@ import java.util.Vector;
  * Created by Khuong Duy on 12/17/2016.
  */
 public class TowerController extends Controller {
+
     private Vector<BulletTower> bulletTowers;
     private static int timeCount = 0;
     public static boolean isBulletAlive;

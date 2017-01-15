@@ -7,6 +7,7 @@ import utils.Utils;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
+
 import static controller.scenes.PlayGameScene.isPause;
 import static utils.Utils.clip;
 
@@ -14,6 +15,7 @@ import static utils.Utils.clip;
  * Created by DUC THANG on 1/1/2017.
  */
 public class PauseGameScene extends GameScene {
+
     private ResumeGame resumeGame;
     private Restart restart;
 
@@ -26,7 +28,7 @@ public class PauseGameScene extends GameScene {
 
     @Override
     public void update(Graphics g) {
-        if(isPause) {
+        if (isPause) {
             restart.update(g);
             resumeGame.update(g);
         }
@@ -49,14 +51,14 @@ public class PauseGameScene extends GameScene {
 
     @Override
     public void mousePressed(MouseEvent e) {
-        if(resumeGame.checkMouse() && isPause) {
+        if (resumeGame.checkMouse() && isPause) {
             isPause = false;
             if (!clip.isRunning())
                 clip.start();
             this.sceneListener.back();
         }
 
-        if(restart.checkMouse()) {
+        if (restart.checkMouse()) {
             Utils.reset();
             isPause = false;
             this.sceneListener.back();
@@ -66,7 +68,7 @@ public class PauseGameScene extends GameScene {
 
     @Override
     public void keyPressed(KeyEvent e) {
-        if(e.getKeyCode() == KeyEvent.VK_P && isPause) {
+        if (e.getKeyCode() == KeyEvent.VK_P && isPause) {
             isPause = false;
             this.sceneListener.back();
         }

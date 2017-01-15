@@ -12,20 +12,22 @@ import java.util.Vector;
 /**
  * Created by HieuIt on 12/17/2016.
  */
-public class BodyManager implements BaseController{
+public class BodyManager implements BaseController {
+
     private Vector<Body> bodies;
 
-    public static final BodyManager instance=new BodyManager();
+    public static final BodyManager instance = new BodyManager();
 
-    public void register(Body other){
+    public void register(Body other) {
         this.bodies.add(other);
     }
-    public void remove(Body other){
+
+    public void remove(Body other) {
         bodies.remove(other);
     }
 
     public BodyManager() {
-        bodies=new Vector<>();
+        bodies = new Vector<>();
     }
 
     public void run() {

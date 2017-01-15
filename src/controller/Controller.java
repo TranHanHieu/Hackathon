@@ -12,7 +12,7 @@ import java.io.Serializable;
 /**
  * Created by Khuong Duy on 12/17/2016.
  */
-public class Controller implements BaseController,Serializable{
+public class Controller implements BaseController{
     protected Model model;
     protected View view;
 

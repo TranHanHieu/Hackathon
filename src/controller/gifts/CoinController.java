@@ -14,6 +14,7 @@ import java.awt.*;
  * Created by Hieu It on 12/31/2016.
  */
 public class CoinController extends Controller implements Body {
+
     private static int WITDH = 20;
     private static int HEIGHT = 30;
     public static int SPEED = 10;

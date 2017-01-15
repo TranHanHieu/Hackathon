@@ -12,7 +12,8 @@ import java.util.stream.Collectors;
  * Created by Khuong Duy on 12/31/2016.
  */
 public class SpawnEnemy {
-    public int file =0;
+
+    public int file = 0;
     public static final SpawnEnemy instance = new SpawnEnemy();
     public final File folder;
     public Vector<File> allFile = new Vector<>();
@@ -46,8 +47,6 @@ public class SpawnEnemy {
             }
         }
     }
-
-
 
 
 }

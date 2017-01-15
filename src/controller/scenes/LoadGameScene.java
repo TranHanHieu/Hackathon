@@ -10,8 +10,8 @@ import java.awt.event.MouseEvent;
  * Created by Hieu It on 12/31/2016.
  */
 public class LoadGameScene extends GameScene {
-    private Image background;
 
+    private Image background;
     private int count;
     private boolean check = true;
     int timeCount = 0;

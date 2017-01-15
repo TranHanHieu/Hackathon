@@ -14,6 +14,7 @@ import java.awt.*;
  * Created by Hieu It on 12/31/2016.
  */
 public class TotalCoin extends Controller implements Body {
+
     private int coin = 500;
 
     public int getCoin() {
@@ -26,8 +27,8 @@ public class TotalCoin extends Controller implements Body {
 
     public static TotalCoin instance = create(630, 40);
 
-    public static TotalCoin create(int x, int y){
-        return new TotalCoin(new Model(x,y,40,40),
+    public static TotalCoin create(int x, int y) {
+        return new TotalCoin(new Model(x, y, 40, 40),
                 new SingleView(Utils.loadImage("res/iconCoin.png")));
     }
 
@@ -36,20 +37,21 @@ public class TotalCoin extends Controller implements Body {
         BodyManager.instance.register(this);
     }
 
-    public boolean existCoin(TowerController towerController){
+    public boolean existCoin(TowerController towerController) {
         return this.coin - towerController.getCoin() > -1;
     }
+
     @Override
     public void draw(Graphics g) {
         super.draw(g);
         String temp = coin + " $";
         g.setColor(Color.GREEN);
-        g.drawString(temp,690,60);
+        g.drawString(temp, 690, 60);
     }
 
     @Override
     public void onContact(Body other) {
-        if (other instanceof CoinController){
+        if (other instanceof CoinController) {
             System.out.println("BBBBBBB");
         }
 

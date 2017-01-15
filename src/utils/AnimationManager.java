@@ -4,7 +4,7 @@ import controller.enemies.EnemyType;
 import views.Animation;
 
 /**
- * Created by tranh on 25/12/2016.
+ * Created by HieuIt on 25/12/2016.
  */
 public class AnimationManager {
     //normal

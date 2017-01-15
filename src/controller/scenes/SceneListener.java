@@ -5,5 +5,6 @@ package controller.scenes;
  */
 public interface SceneListener {
     void replaceScene(GameScene newScene, boolean addToBackStack);
+
     void back();
 }

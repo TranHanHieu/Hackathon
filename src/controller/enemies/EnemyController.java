@@ -19,6 +19,7 @@ import java.util.Vector;
  * Created by HieuIt on 12/17/2016.
  */
 public class EnemyController extends Controller implements Body {
+
     public double hpMax;
     protected int hp;
 
@@ -45,7 +46,6 @@ public class EnemyController extends Controller implements Body {
     public void setHp(int hp) {
         this.hp = hp;
     }
-
 
 
     public EnemyController(Model model, Animation animation, EnemyType enemyType, int hp) {
@@ -260,8 +260,9 @@ public class EnemyController extends Controller implements Body {
         }
         return null;
     }
-    public static EnemyController createEnemy(int type){
-        switch (type){
+
+    public static EnemyController createEnemy(int type) {
+        switch (type) {
             case 1:
                 return createEnemy(EnemyType.NORMAL);
 
@@ -275,15 +276,16 @@ public class EnemyController extends Controller implements Body {
                 return createEnemy(EnemyType.HORSE);
 
             case 5:
-               return createEnemy(EnemyType.SPEED);
+                return createEnemy(EnemyType.SPEED);
 
             case 6:
                 return createEnemy(EnemyType.BOT);
 
         }
-       return null;
+        return null;
     }
-    public static EnemyController createEnemy(int x,int y,int hp,EnemyType type){
+
+    public static EnemyController createEnemy(int x, int y, int hp, EnemyType type) {
         switch (type) {
             case NORMAL:
                 return new EnemyController(

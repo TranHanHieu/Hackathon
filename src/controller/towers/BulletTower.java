@@ -123,7 +123,7 @@ public class BulletTower extends Controller implements Body {
                 b2.setAtk(10);
                 return b2;
             case FIRE:
-                BulletTower b3 = new BulletTower(new Model(x, y, 100, 100), new Animation(Utils.realIInFoder("res/Bullet/Fire")), BulletType.FIRE);
+                BulletTower b3 = new BulletTower(new Model(x, y-10, 100, 100), new Animation(Utils.realIInFoder("res/Bullet/Fire")), BulletType.FIRE);
                 b3.setAtk(10);
                 return b3;
 

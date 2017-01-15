@@ -50,8 +50,9 @@ public class TowerManager implements BaseController{
     }
 
     public void add(TowerController t) {
-        if (towerControllers != null)
+        if (towerControllers != null) {
             this.towerControllers.add(t);
+        }
     }
 
     public void remove(TowerController t) {

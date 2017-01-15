@@ -3,7 +3,7 @@ package controller.scenes.icon;
 /**
  * Created by DUC THANG on 1/2/2017.
  */
-public class GuideButton extends IconGame{
+public class GuideButton extends IconGame {
     public GuideButton(int x, int y) {
         super(x, y);
         urlImage1 = "res/icon/huongdan1.png";

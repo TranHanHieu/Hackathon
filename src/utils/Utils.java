@@ -19,7 +19,7 @@ import java.net.URL;
 import java.util.Vector;
 
 /**
- * Created by DUC THANG on 12/17/2016.
+ * Created by HieuIt on 12/17/2016.
  */
 public class Utils {
     public static Point point = new Point();

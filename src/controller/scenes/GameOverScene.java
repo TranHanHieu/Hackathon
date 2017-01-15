@@ -17,10 +17,10 @@ import static utils.Utils.loadImage;
  */
 
 public class GameOverScene extends GameScene {
+
     private Restart restart;
     private static final int RESTART_X = 350;
     private static final int RESTART_Y = 450;
-
     private static final Image gameOver = loadImage("res/icon/gameOver.png");
     private static final int GAMEOVER_X = 160;
     private static final int GAMEOVER_Y = 100;

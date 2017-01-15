@@ -11,22 +11,24 @@ import java.util.Vector;
  * Created by HieuIt on 12/18/2016.
  */
 public class EnemyManager extends Manager {
-    public static  EnemyManager instance = new EnemyManager();
-    public  void register(EnemyController enemyController) {
+
+    public static EnemyManager instance = new EnemyManager();
+
+    public void register(EnemyController enemyController) {
         controllers.add(enemyController);
     }
 
 
     private EnemyManager() {
-        controllers=new Vector<>();
+        controllers = new Vector<>();
     }
 
     public static EnemyController chooseFire(TowerController towerController) {
-        if(!towerController.isFire()){
-            Iterator<Controller> iterator =controllers.iterator();
-            while (iterator.hasNext()){
+        if (!towerController.isFire()) {
+            Iterator<Controller> iterator = controllers.iterator();
+            while (iterator.hasNext()) {
                 Controller controller = iterator.next();
-                if(towerController.intersectsCircle(controller.getModel())){
+                if (towerController.intersectsCircle(controller.getModel())) {
                     return (EnemyController) controller;
                 }
             }

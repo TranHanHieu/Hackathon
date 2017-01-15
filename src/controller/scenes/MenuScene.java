@@ -20,13 +20,13 @@ import static utils.Utils.loadImage;
  * Created by DUC THANG on 12/28/2016.
  */
 public class MenuScene extends GameScene {
+
     private Image backgroud;
     private Start start;
     private ResumeGame resumeGame;
     private Facebook facebook;
     private GuideButton guideButton;
     private HighScoreButton highScoreButton;
-
 
     private static final int RESUME_X = 345;
     private static final int RESUME_Y = 400;
@@ -184,7 +184,7 @@ public class MenuScene extends GameScene {
     @Override
     public void mousePressed(MouseEvent e) {
         if (start.checkMouse()) {
-            Utils.playSound("res/sound/menu.wav",false);
+            Utils.playSound("res/sound/menu.wav", false);
             this.sceneListener.replaceScene(new PlayGameScene(), true);
 
         }
@@ -193,15 +193,15 @@ public class MenuScene extends GameScene {
             resume();
         }
 
-        if(facebook.checkMouse()) {
+        if (facebook.checkMouse()) {
             Utils.openWebpage("https://www.facebook.com/groups/577054122491100/?fref=ts");
         }
 
-        if(guideButton.checkMouse()) {
+        if (guideButton.checkMouse()) {
             this.sceneListener.replaceScene(new GameInstructionScene(), true);
         }
 
-        if(highScoreButton.checkMouse()) {
+        if (highScoreButton.checkMouse()) {
             this.sceneListener.replaceScene(new HightScoreScene(), true);
         }
     }

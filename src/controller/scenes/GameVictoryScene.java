@@ -12,6 +12,7 @@ import java.awt.event.MouseEvent;
  * Created by Hieu It on 12/31/2016.
  */
 public class GameVictoryScene extends GameScene {
+
     private Image background;
     private Restart restart;
 
@@ -37,14 +38,14 @@ public class GameVictoryScene extends GameScene {
 
     @Override
     public void update(Graphics g) {
-        g.drawImage(background, BACKGROUND_X, BACKGROUND_Y, B_WIDTH, B_HEIGHT,null);
+        g.drawImage(background, BACKGROUND_X, BACKGROUND_Y, B_WIDTH, B_HEIGHT, null);
 
-        if (HouseController.instance.getHp()>75){
-            g.drawImage(Utils.loadImage("res/victory3.png"),START_X,START_Y,3 * S_WIDTH,S_HEIGHT,null);
-        }else if (HouseController.instance.getHp()>=50){
-            g.drawImage(Utils.loadImage("res/victory2.png"),START_X,START_Y,2 * S_WIDTH,S_HEIGHT,null);
-        }else {
-            g.drawImage(Utils.loadImage("res/victory1.png"),START_X,START_Y,S_WIDTH,S_HEIGHT,null);
+        if (HouseController.instance.getHp() > 75) {
+            g.drawImage(Utils.loadImage("res/victory3.png"), START_X, START_Y, 3 * S_WIDTH, S_HEIGHT, null);
+        } else if (HouseController.instance.getHp() >= 50) {
+            g.drawImage(Utils.loadImage("res/victory2.png"), START_X, START_Y, 2 * S_WIDTH, S_HEIGHT, null);
+        } else {
+            g.drawImage(Utils.loadImage("res/victory1.png"), START_X, START_Y, S_WIDTH, S_HEIGHT, null);
         }
 
         restart.update(g);
@@ -62,7 +63,7 @@ public class GameVictoryScene extends GameScene {
 
     @Override
     public void keyPressed(KeyEvent e) {
-        if(restart.checkMouse()) {
+        if (restart.checkMouse()) {
             Utils.reset();
             this.sceneListener.back();
         }

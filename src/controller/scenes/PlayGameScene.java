@@ -36,33 +36,30 @@ public class PlayGameScene extends GameScene {
     public static int timeCount = 0;
     public static int second = 0;
     public static int level = 0;
-    int countOfMoney = 0;
-    Vector<Model> cloudModels;
-    private Vector<String> stringStage = Utils.createFactory("res/Stage/allstage.txt");
-    int towerCreate = 1;
-    public static int posString = 0;
-    String stage = null;
-    boolean checkCoint = true;
-    String str = "Stage 1";
-    private Image background;
-    private Image backgroundTop;
-    SingleView cloudView;
-
     public static boolean isPause = false;
-
-    private boolean check;
-    private Image snow;
-    private Animation flag, windmill;
-
-    CellController cellController;
-    CellController find;
-
     public static Vector<BaseController> controllers;
+    public static int posString = 0;
 
     private BackMenu backMenu;
     private PauseGame pauseGame;
     private boolean checkStage = false;
     private boolean checkCell = false;
+    private Vector<String> stringStage = Utils.createFactory("res/Stage/allstage.txt");
+    private Image background;
+    private Image backgroundTop;
+    private boolean check;
+    private Image snow;
+    private Animation flag, windmill;
+
+    int countOfMoney = 0;
+    int towerCreate = 1;
+    String stage = null;
+    Vector<Model> cloudModels;
+    boolean checkCoint = true;
+    String str = "Stage 1";
+    SingleView cloudView;
+    CellController cellController;
+    CellController find;
 
     public PlayGameScene() {
         Utils.openSound();
@@ -71,19 +68,19 @@ public class PlayGameScene extends GameScene {
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
-        cloudModels=new Vector<>();
+        cloudModels = new Vector<>();
+        flag = new Animation(Utils.realIInFoder("res/flag"));
+        windmill = new Animation(Utils.realIInFoder("res/windmill"));
+        backgroundTop = Utils.loadImage("res/top.png");
+        cloudView = new SingleView(Utils.loadImage("res/util/could.png"));
 
-        cloudView=new SingleView(Utils.loadImage("res/util/could.png"));
         controllers = new Vector<>();
         controllers.add(EnemyManager.instance);
         controllers.add(TowerManager.instance);
         controllers.add(TotalCoin.instance);
         controllers.add(BodyManager.instance);
-        flag = new Animation(Utils.realIInFoder("res/flag"));
-        windmill = new Animation(Utils.realIInFoder("res/windmill"));
-        backgroundTop = Utils.loadImage("res/top.png");
-
         controllers.add(HouseController.instance);
+
         background = loadImage("res/Map1.png");
         backMenu = new BackMenu(830, 40);
         pauseGame = new PauseGame(40, 50);
@@ -107,8 +104,8 @@ public class PlayGameScene extends GameScene {
         if (checkCell && find.getTowerController() != null) {
             g.setColor(Color.red);
             int r = (int) (find.getTowerController().getRadiusFire() * 1.5);
-            int x = find.getModel().getMidX() - r / 2 - 3;
-            int y = find.getModel().getMidY() - r / 2 - 3;
+            int x = find.getModel().getMidX() - r / 2;
+            int y = find.getModel().getMidY() - r / 2 - 13;
 
             Image image = loadImage("res/Bullet/Fire/image 7415.png");
             g.drawImage(image, x, y, r, r, null);
@@ -133,16 +130,16 @@ public class PlayGameScene extends GameScene {
         if (stage != null)
             g.drawString(stage, 150, 60);
         for (int i = 0; i < cloudModels.size(); i++) {
-            cloudView.draw(g,cloudModels.get(i));
+            cloudView.draw(g, cloudModels.get(i));
         }
     }
 
     @Override
     public void run() {
-        Random r=new Random();
-        while (cloudModels.size()<3){
-            int y=Math.abs(r.nextInt()%450)+100;
-            cloudModels.add(new Model(0,y,100,100));
+        Random r = new Random();
+        while (cloudModels.size() < 3) {
+            int y = Math.abs(r.nextInt() % 450) + 100;
+            cloudModels.add(new Model(0, y, 100, 100));
         }
         runAll();
         if (!checkCoint) {
@@ -153,10 +150,10 @@ public class PlayGameScene extends GameScene {
             countOfMoney = 0;
         }
         for (int i = 0; i < cloudModels.size(); i++) {
-            cloudModels.get(i).move(1,0);
+            cloudModels.get(i).move(1, 0);
         }
         for (int i = 0; i < cloudModels.size(); i++) {
-            if (cloudModels.get(i).getX()>1200){
+            if (cloudModels.get(i).getX() > 1200) {
                 cloudModels.remove(i);
             }
         }
@@ -202,7 +199,7 @@ public class PlayGameScene extends GameScene {
             controllers.get(i).run();
         }
         if (!HouseController.instance.isAlive()) {
-            Utils.playSound("res/sound/over.wav",false);
+            Utils.playSound("res/sound/over.wav", false);
             this.sceneListener.replaceScene(new GameOverScene(), false);
         }
 

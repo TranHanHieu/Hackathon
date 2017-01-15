@@ -12,6 +12,7 @@ import java.awt.event.MouseEvent;
  * Created by DUC THANG on 1/2/2017.
  */
 public class HightScoreScene extends GameScene {
+
     private Image background;
     private BackMenu backMenu;
 
@@ -46,7 +47,7 @@ public class HightScoreScene extends GameScene {
 
     @Override
     public void mousePressed(MouseEvent e) {
-        if(backMenu.checkMouse()) {
+        if (backMenu.checkMouse()) {
             this.sceneListener.back();
         }
     }

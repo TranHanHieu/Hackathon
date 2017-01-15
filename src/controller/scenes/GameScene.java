@@ -9,6 +9,7 @@ import java.awt.event.MouseEvent;
  * Created by DUC THANG on 12/28/2016.
  */
 public abstract class GameScene {
+
     protected SceneListener sceneListener;
     protected final int BACKGROUND_X = 0;
     protected final int BACKGROUND_Y = 0;
@@ -20,9 +21,14 @@ public abstract class GameScene {
     }
 
     public abstract void update(Graphics g);
-    public  abstract void run();
+
+    public abstract void run();
+
     public abstract void mouseClicked(MouseEvent e);
+
     public abstract void mouseReleased(MouseEvent e);
+
     public abstract void mousePressed(MouseEvent e);
+
     public abstract void keyPressed(KeyEvent e);
 }

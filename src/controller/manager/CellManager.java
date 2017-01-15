@@ -16,10 +16,10 @@ import java.util.Vector;
  * Created by tranh on 12/19/2016.
  */
 public class CellManager implements BaseController {
-    public  static Vector<CellController> cellControllers=new Vector<>();
+
+    public static Vector<CellController> cellControllers = new Vector<>();
     int[] road;
     int[] build;
-
 
     public static final CellManager instance = new CellManager();
 
@@ -41,8 +41,8 @@ public class CellManager implements BaseController {
                 road[i] = integers.get(i);
             }
             integers.clear();
-            str=bufferedReader.readLine();
-            strNumber=str.split(",");
+            str = bufferedReader.readLine();
+            strNumber = str.split(",");
             for (int i = 0; i < strNumber.length; i++) {
                 integers.add(Integer.valueOf(strNumber[i]));
             }
@@ -104,7 +104,7 @@ public class CellManager implements BaseController {
 
     public void draw(Graphics g) {
         for (int i = 0; i < cellControllers.size(); i++) {
-            if (!cellControllers.get(i).getModel().isUtil()&&!cellControllers.get(i).getModel().isRoad())
+            if (!cellControllers.get(i).getModel().isUtil() && !cellControllers.get(i).getModel().isRoad())
                 cellControllers.get(i).draw(g);
         }
     }
@@ -123,9 +123,10 @@ public class CellManager implements BaseController {
         }
         return null;
     }
-    public static int findPosTower(TowerController towerController){
+
+    public static int findPosTower(TowerController towerController) {
         for (int i = 0; i < cellControllers.size(); i++) {
-            if(cellControllers.get(i).getTowerController()==towerController){
+            if (cellControllers.get(i).getTowerController() == towerController) {
                 return i;
             }
         }

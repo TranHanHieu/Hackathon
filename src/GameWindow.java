@@ -70,7 +70,7 @@ public class GameWindow extends Frame implements Runnable, SceneListener {
                                 break;
                         }
                         if (k != -1) {
-                            bufferedWriter.write(towerController.getModel().getX() +" "+towerController.getModel().getY() + " " + k);
+                            bufferedWriter.write(towerController.getModel().getX() + " " + towerController.getModel().getY() + " " + k);
                             System.out.println(CellManager.findPosTower(towerController) + " " + k);
                             bufferedWriter.newLine();
                             bufferedWriter.flush();
@@ -109,7 +109,7 @@ public class GameWindow extends Frame implements Runnable, SceneListener {
                     bufferedWriter.write("house");
                     bufferedWriter.newLine();
                     System.out.println("HouseController.instance.getHp() = " + HouseController.instance.getHp());
-                    bufferedWriter.write(HouseController.instance.getHp()+"");
+                    bufferedWriter.write(HouseController.instance.getHp() + "");
                     bufferedWriter.newLine();
                     bufferedWriter.flush();
                     bufferedWriter.write("sound");
@@ -131,7 +131,7 @@ public class GameWindow extends Frame implements Runnable, SceneListener {
                         bufferedWriter.write("0");
                         bufferedWriter.newLine();
                     }
-                    bufferedWriter.write(PlayGameScene.posString+"");
+                    bufferedWriter.write(PlayGameScene.posString + "");
                     bufferedWriter.newLine();
                     System.out.println(PlayGameScene.posString);
                     bufferedWriter.flush();
